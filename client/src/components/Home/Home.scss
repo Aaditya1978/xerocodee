@@ -1,0 +1,165 @@
+@use "../../index.scss" as *;
+
+.home{
+    .loading{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    background-color: $color-secondary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+
+    .s-card {
+        background-color: #ffffff;
+        border: none;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding: 20px 40px;
+        width: 900px;
+        border-radius: 0px;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        position: relative;
+
+        .s-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            img {
+                width: 150px;
+            }
+        }
+
+        .s-header {
+            margin-top: 30px;
+
+            h2 {
+                font-family: $font-family-nunito;
+                font-weight: 600;
+                font-size: 1.5rem;
+                text-align: center;
+            }
+
+            p {
+                font-family: $font-family-nunito;
+                font-weight: 400;
+                font-size: 1rem;
+                text-align: center;
+                margin-top: 10px;
+                position: relative;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    bottom: 20%;
+                    left: 16%;
+                    width: 100px;
+                    height: 1px;
+                    background-color: #000000;
+                }
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: 20%;
+                    right: 16%;
+                    width: 100px;
+                    height: 1px;
+                    background-color: #000000;
+                }
+            }
+        }
+
+        .s-btns {
+            margin-top: 60px;
+            margin-bottom: 60px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            // hide radio buttons
+            input[type="radio"] {
+                display: none;
+            }
+
+            // style radio as button
+            label {
+                font-family: $font-family-nunito;
+                font-weight: 500;
+                font-size: 1.2rem;
+                padding: 10px 20px;
+                border: 1px solid $color-primary;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: $color-primary;
+                    color: #ffffff;
+                }
+            }
+
+            // style radio as button when checked
+            input[type="radio"]:checked+label {
+                background-color: $color-primary;
+                color: #ffffff;
+            }
+        }
+
+        .s-form {
+            margin-top: 80px;
+
+            form {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 20px;
+
+
+                input {
+                    width: 400px;
+                    font-family: $font-family-nunito;
+                    font-weight: 400;
+                    font-size: 1rem;
+                    outline: none;
+
+                    &:focus {
+                        outline: none !important;
+                        box-shadow: none;
+                    }
+
+                    &::placeholder {
+                        font-family: $font-family-nunito;
+                        font-weight: 400;
+                        font-size: 1rem;
+                    }
+                }
+
+                button {
+                    height: 50px;
+                    width: 130px;
+                    margin-top: 0;
+                }
+            }
+        }
+
+        .s-repo{
+            display: flex;
+            flex-direction: column;
+            margin-top: 30px;
+            justify-content: center;
+            align-items: center;
+            font-family: $font-family-nunito;
+        }
+    }
+}

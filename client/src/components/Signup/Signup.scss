@@ -1,0 +1,372 @@
+@use "../../index.scss" as *;
+
+.signup {
+    background-color: $color-secondary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+
+    .s-card {
+        background-color: #ffffff;
+        padding: 0px;
+        border: none;
+        width: 900px;
+        border-radius: 0px;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        position: relative;
+
+        .s-cont {
+            width: 100%;
+            height: 100%;
+        }
+
+        .s-row {
+            width: 100%;
+            height: 100%;
+            padding: 30px 30px;
+        }
+
+        .s-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0%;
+                width: 1px;
+                height: 80%;
+                background-color: #000000;
+                transform: translateY(10%);
+            }
+
+            .s-logo {
+
+                img {
+                    width: 130px;
+                }
+            }
+
+            .s-header {
+                margin-top: 20px;
+
+                h2 {
+                    font-family: $font-family-nunito;
+                    font-weight: 700;
+                    font-size: 2rem;
+                    text-align: center;
+                }
+
+                p {
+                    font-family: $font-family-nunito;
+                    font-weight: 400;
+                    font-size: 1rem;
+                    text-align: center;
+                    margin-top: 10px;
+                    position: relative;
+
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        bottom: 20%;
+                        left: -70%;
+                        width: 100px;
+                        height: 1px;
+                        background-color: #000000;
+                    }
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        bottom: 20%;
+                        right: -70%;
+                        width: 100px;
+                        height: 1px;
+                        background-color: #000000;
+                    }
+                }
+            }
+
+            .s-form {
+                margin-top: 20px;
+                width: 100%;
+
+                label {
+                    font-family: $font-family-nunito;
+                    font-weight: 600;
+                    font-size: 1rem;
+                }
+
+                input {
+                    width: 90%;
+                    border-radius: 5px;
+                    font-family: $font-family-nunito;
+                    font-weight: 500;
+                    font-size: 1rem;
+                    outline: none;
+                }
+
+                .s-btn {
+                    width: 90%;
+                    height: 40px;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: $color-primary;
+                    color: #ffffff;
+                    font-family: $font-family-nunito;
+                    font-weight: 600;
+                    font-size: 1rem;
+                    outline: none;
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover {
+                        background-color: darken($color-primary, 10%);
+                    }
+                }
+
+                .s-social{
+                    margin-top: 20px;
+
+                    p{
+                        font-family: $font-family-nunito;
+                        font-weight: 600;
+                        font-size: 1rem;
+                        text-align: center;
+                        margin-bottom: 10px;
+                    }
+
+                    .s-social-btn{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+
+                        .s-btn{
+                            width: 300px;
+                            height: 50px;
+                            border: 1px solid #6c6a6a;
+                            border-radius: 5px;
+                            background-color: #ffffff;
+                            color: #000000;
+                            font-family: $font-family-nunito;
+                            font-weight: 600;
+                            font-size: 0.8rem;
+                            outline: none;
+                            cursor: pointer;
+                            transition: all 0.3s ease-in-out;
+
+                            .icon{
+                                margin-right: 5px;
+                                font-size: 1.7rem;
+                            }
+
+                            &:hover{
+                                background-color: darken(#ffffff, 10%);
+                            }
+
+                            &:first-child{
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .s-footer{
+                margin-top: 20px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                p{
+                    font-family: $font-family-nunito;
+                    font-weight: 600;
+                    font-size: 0.8rem;
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        .s-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .s-image {
+                img {
+                    width: 300px;
+                }
+            }
+
+            .s-wave {
+                position: absolute;
+                bottom: -25px;
+                right: 0px;
+
+                svg {
+                    width: 350px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        .s-card {
+            width: 700px;
+
+            .s-right {
+                .s-image {
+                    img {
+                        width: 240px;
+                    }
+                }
+    
+                .s-wave {
+                    bottom: -33px;
+
+                    svg {
+                        width: 300px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .s-card{
+            margin: 40px 0px;
+            width: 70%;
+
+            .s-left{
+                &:after{
+                    display: none;
+                }
+
+                .s-header{
+                    h2{
+                        font-size: 1.5rem;
+                    }
+
+                    p{
+                        font-size: 0.8rem;
+
+                        &:before{
+                            display: none;
+                        }
+
+                        &:after{
+                            display: none;
+                        }
+                    }
+                }
+
+                .s-form{
+                    label{
+                        font-size: 0.8rem;
+                    }
+
+                    input{
+                        width: 100%;
+                        font-size: 0.8rem;
+                    }
+
+                    .s-btn{
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+
+            .s-right{
+                margin-top: 30px;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .s-image{
+                    img{
+                        width: 200px;
+                    }
+                }
+
+                .s-wave{
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 575px) {
+        .s-card{
+            width: 95%;
+            margin: 20px 0px;
+
+            .s-left{
+                .s-header{
+                    h2{
+                        font-size: 1.2rem;
+                    }
+
+                    p{
+                        font-size: 0.7rem;
+                    }
+                }
+
+                .s-form{
+                    label{
+                        font-size: 0.7rem;
+                    }
+
+                    input{
+                        font-size: 0.7rem;
+                    }
+
+                    .s-btn{
+                        font-size: 0.7rem;
+                    }
+
+                    .s-social{
+                        p{
+                            font-size: 0.6rem;
+                        }
+
+                        .s-social-btn{
+                            flex-direction: column;
+
+                            .s-btn{
+                                width: 100%;
+                                font-size: 0.6rem;
+                            }
+
+                            .s-btn:first-child{
+                                margin-right: 0px;
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .s-right{
+                .s-image{
+                    img{
+                        width: 180px;
+                    }
+                }
+            }
+        }
+    }
+}
