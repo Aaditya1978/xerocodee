@@ -73,7 +73,7 @@ router.post("/signup", async (req, res) => {
 
     // send token to client as cookie
     res.cookie("token", token, {
-      httpOnly: true,
+      httpOnly: false,
     });
 
     // send response
@@ -113,7 +113,7 @@ router.post("/login", async (req, res) => {
 
   // send token to client as cookie
   res.cookie("token", token, {
-    httpOnly: true,
+    httpOnly: false,
   });
 
   // send response
